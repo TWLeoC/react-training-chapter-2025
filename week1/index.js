@@ -73,6 +73,7 @@ function App() {
               </tr>
             </thead>
             <tbody>
+              {/* 將 product 逐一渲染到畫面上 */}
               {products.map((product) => (
                 <tr key={product.id}>
                   <td>{product.title}</td>
@@ -80,6 +81,7 @@ function App() {
                   <td>{product.price}</td>
                   <td>{product.is_enabled ? '啟用' : '未啟用'}</td>
                   <td>
+                    {/* 點擊按鈕後，讓被點擊的產品暫存到 tempProduct */}
                     <button
                       className='btn btn-primary'
                       onClick={() => setTempProduct(product)}>
@@ -93,6 +95,7 @@ function App() {
         </div>
         <div className='col-md-6'>
           <h2>單一產品細節</h2>
+          {/* 如果 tempProduct 存在，就顯示畫面 */}
           {tempProduct ? (
             <div className='card mb-3'>
               <img
